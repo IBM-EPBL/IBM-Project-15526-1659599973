@@ -1,0 +1,65 @@
+<html>
+<head>
+  <title>Digit Recognition WebApp</title>
+
+  <meta name="viewport" content="width=device-width">
+
+</head>
+<style>
+  body{
+   background-image: url('https://i.postimg.cc/4xS7G0KY/numbers.jpg');
+   background-repeat: no-repeat;
+   background-size: cover;
+  }
+</style>
+
+
+<script>
+  function preview() {
+    frame.src=URL.createObjectURL(event.target.files[0]);
+}
+</script>
+<script>
+    $(document).ready(function() {
+          $('#clear_button').on('click', function() {
+              $('#image').val('');
+              $('#frame').attr('src',"");
+            });
+        });
+
+</script>
+
+<body>
+
+  <h1 class="welcome">IBM PROJECT
+  <div id="team_id">TEAM ID : PNT2022TMID32721</div>
+  </h1>
+  <section id="title">
+    <h4 class="heading">Handwritten Digit Recognition Website</h4>
+    <br><br>
+      <p>
+        The website is designed to predict the handwritten digit.
+      </p>
+    <p>
+        Handwriting recognition is one of the compelling research works going on because every individual in this world
+        has their own style of writing. It is the capability of the computer to identify and understand
+        handwritten digits or characters automatically. Because of the progress in the field of science and technology,
+        everything is being digitalized to reduce human effort.</p>
+      <br>
+   </section>
+
+  <section id="content">
+        <div class="leftside">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+        <label>Select a image:</label>
+        <input id="image" type="file" name="image" accept="image/png, image/jpeg" onchange="preview()"><br><br>
+          <img id="frame" src="" width="100px" height="100px"/>
+          <div class="buttons_div">
+            <button type="submit" class="btn btn-dark" id="predict_button">Predict</button>
+            <button type="button" class="btn btn-dark" id="clear_button">&nbsp Clear &nbsp</button>
+          </div>
+        </form>
+        </div>
+  </section>
+</body>
+</html>
